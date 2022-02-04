@@ -10,6 +10,27 @@
   </li>
 </ul>
 
+<h2>Add a comment:</h2>
+
+<%= form_with model: [ @article, @article.comments.build ] do |form| %>
+  <p>
+    <%= form.label :commentor %> <br>
+    <%= form.text_field :commentor %>
+  </p>
+
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+    <% end %>
+  </p>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+
+
 <p> 
     <%= link_to 'all articles page', articles_path %>
 </p>
