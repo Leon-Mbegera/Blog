@@ -10,6 +10,21 @@
   </li>
 </ul>
 
+<h2> Comments</h2>
+
+<% @article.comments.each do |comment| %>
+  
+  <div>
+    <p>
+      <b> <%= comment.commentor %> : </b>
+      <span> <%= comment.body%> </span>
+    </p>
+  </div>
+<% end %>
+
+
+
+
 <h2>Add a comment:</h2>
 
 <%= form_with model: [ @article, @article.comments.build ] do |form| %>
