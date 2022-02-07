@@ -12,42 +12,9 @@
 
 <h2> Comments</h2>
 
-<% @article.comments.each do |comment| %>
-  
-  <div>
-    <p>
-      <b> <%= comment.commentor %> : </b>
-      <span> <%= comment.body%> </span>
-    </p>
-  </div>
-<% end %>
-
-
-
+<%= render @article.comments %> 
+ 
 
 <h2>Add a comment:</h2>
 
-<%= form_with model: [ @article, @article.comments.build ] do |form| %>
-  <p>
-    <%= form.label :commentor %> <br>
-    <%= form.text_field :commentor %>
-  </p>
-
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
-  </p>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
-
-
-
-<p> 
-    <%= link_to 'all articles page', articles_path %>
-</p>
-
-
-
+<%= render 'comments/form'%>
