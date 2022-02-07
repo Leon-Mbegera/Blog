@@ -1,6 +1,8 @@
-<div>
-  <p>
-    <b> <%= comment.commentor %> : </b>
-    <span> <%= comment.body%> </span>
-  </p>
-</div>
+<% unless comment.archived? %>
+  <div>
+    <p>
+      <b> <%= comment.commentor %> : </b>
+      <span> <%= comment.body%> </span>
+    </p>
+  </div>
+<% end %>
