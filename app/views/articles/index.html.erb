@@ -1,6 +1,6 @@
 <h1>All Articles</h1>
 
-
+<p> Our blog has <%= Article.public_count %> articles and still counting... </p>
 <ul>
   <% @articles.each do |article| %>
     <% unless article.archived? %>

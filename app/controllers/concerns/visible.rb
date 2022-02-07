@@ -8,7 +8,9 @@ module Visible
   end
 
   class_methods do
-    where(status: 'public').count
+    def public_count
+      where(status: 'public').count
+    end
   end
 
   def archived?
